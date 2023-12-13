@@ -52,7 +52,7 @@ export default function RecipeDetails({ recipe }) {
           </div>
 
           <div className="info">
-              <p>Cookingtime: { cookingTime } mins</p>
+              <p>Cooking time: { cookingTime } mins</p>
               <h3>Ingredients:</h3>
 
               <ul>
