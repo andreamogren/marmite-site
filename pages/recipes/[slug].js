@@ -30,6 +30,15 @@ export async function getStaticProps({ params }) {
         'fields.slug': params.slug
     })
 
+    if(!items.length) {
+        return {
+            redirect: {
+                destination: '/',
+                permanent: false,
+            }
+        }
+    }
+
     return {
         props: { recipe: items[0] },
         revalidate: 10,
