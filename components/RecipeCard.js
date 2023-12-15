@@ -3,14 +3,22 @@ import Image from 'next/image'
 
 export default function RecipeCard({ recipe }) {
     const { title, slug, cookingTime, thumbnail } = recipe.fields
+    const linkStyle = {
+        color: '#fff',
+        background: '#f01b29',
+        padding: '16px 24px',
+        textDecoration: 'none'
+    }
+    const { file: imgData } = thumbnail.fields;
+
 
     return (
         <div className="card">
             <div className="featured">
                 <Image
-                    src={'https:' + thumbnail.fields.file.url}
-                    width={thumbnail.fields.file.details.image.width}
-                    height={thumbnail.fields.file.details.image.height}
+                    src={ 'https:' + imgData.url }
+                    width={ imgData.details.image.width }
+                    height={ imgData.details.image.height }
                     alt="banan"
                 />
             </div>
@@ -20,7 +28,7 @@ export default function RecipeCard({ recipe }) {
                     <p>Takes approx { cookingTime } mins to make</p>
                 </div>
                 <div className="actions">
-                    <Link href={'/recipes/' + slug}>Cook this</Link>
+                    <Link href={ '/recipes/' + slug } style={ linkStyle }>Cook this</Link>
                 </div>
             </div>
 
@@ -35,6 +43,8 @@ export default function RecipeCard({ recipe }) {
                   position: relative;
                   top: -40px;
                   left: -10px;
+                  width: 360px;
+                  max-width: 100%;
                 }
                 .info {
                   padding: 16px;
@@ -51,12 +61,6 @@ export default function RecipeCard({ recipe }) {
                   margin-top: 20px;
                   display: flex;
                   justify-content: flex-end;
-                }
-                .actions a {
-                  color: #fff;
-                  background: #f01b29;
-                  padding: 16px 24px;
-                  text-decoration: none;
                 }
               `}</style>
         </div>
