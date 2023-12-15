@@ -25,9 +25,10 @@ export default function Recipes({recipes}) {
 
           <style jsx>{`
               .recipe-list {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                grid-gap: 20px 60px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 50px;
               }
           `}</style>
       </div>

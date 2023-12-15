@@ -59,7 +59,11 @@ export default function RecipeDetails({ recipe }) {
                   src={'https:' + imgData.url}
                   width={imgData.details.image.width}
                   height={imgData.details.image.height}
-                  alt="banan2"
+                  alt=""
+                  style={{
+                      maxWidth: '100%',
+                      objectFit: 'contain',
+                }}
               />
               <h2>{ title }</h2>
           </div>

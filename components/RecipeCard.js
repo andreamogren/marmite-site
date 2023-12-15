@@ -19,7 +19,7 @@ export default function RecipeCard({ recipe }) {
                     src={ 'https:' + imgData.url }
                     width={ imgData.details.image.width }
                     height={ imgData.details.image.height }
-                    alt="banan"
+                    alt=""
                 />
             </div>
             <div className="content">
